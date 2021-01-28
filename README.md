@@ -1,11 +1,14 @@
-# ARM64V8 Node.js
+# Docker Hub's Automated Image Builds
+This example demonstrates how to automatically build and publish docker images using Docker Hub when a new version of this project is committed.  The example [Dockerfile](Dockerfile) builds a Node.js image for the ARM64V8 architecture.
+
 ## Build image
 ```
-docker build -t raymondwcs/node .
+docker pull raymondwcs/node 
 ```
 ## Usage
-Create *aliaes* for `node`, `npm` and `nodemon`
+Create following *aliaes* for `node`, `npm` and `nodemon` in `.zshrc`
 ```
+NODE_DOCKER_IMAGE="raymondwcs/node"
 node() {
   docker run --rm -it --init -v $(pwd):/usr/src/app -w /usr/src/app -p 8099:8099 --name node $NODE_DOCKER_IMAGE node $*
 }
