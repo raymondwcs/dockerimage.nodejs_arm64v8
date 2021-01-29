@@ -1,5 +1,5 @@
 # Docker Hub's Automated Image Builds
-This example demonstrates how to build (and publish) docker images using Docker Hub's automated builds facility for Apple M1 (ARM64V8).  This [Docker Hub repository](https://hub.docker.com/repository/docker/raymondwcs/node) is linked to this [GitHub project](https://github.com/raymondwcs/dockerimage.nodejs_arm64v8.git).  Commits to the GitHub project trigger an automated build of this [Docker image](Dockerfile)
+This example demonstrates how to build (and publish) docker images using Docker Hub's automated builds facility for Apple M1 (arm64v8).  This [Docker Hub repository](https://hub.docker.com/repository/docker/raymondwcs/node) is linked to this [GitHub project](https://github.com/raymondwcs/dockerimage.nodejs_arm64v8.git).  Commits to the GitHub project trigger an automated build of this [Docker image](Dockerfile)
 
 ## Getting the docker image
 Download from Docker Hub:
