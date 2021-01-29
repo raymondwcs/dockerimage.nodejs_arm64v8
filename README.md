@@ -1,11 +1,16 @@
 # Docker Hub's Automated Image Builds
-This example demonstrates how to build and publish docker images using Docker Hub's automated builds facility.  A Docker Hub [repository](https://hub.docker.com/repository/docker/raymondwcs/node) is linked to this GitHub [project](https://github.com/raymondwcs/dockerimage.nodejs_arm64v8.git).  A new version of docker image will be built and published automatically when a new version of the GitHub project is committed. The example [Dockerfile](Dockerfile) builds a Node.js image for the ARM64V8 architecture.
+This example demonstrates how to build (and publish) docker images using Docker Hub's automated builds facility for Apple M1 (ARM64V8).  This [Docker Hub repository](https://hub.docker.com/repository/docker/raymondwcs/node) is linked to this [GitHub project](https://github.com/raymondwcs/dockerimage.nodejs_arm64v8.git).  Commits to the GitHub project trigger an automated build of this [Docker image](Dockerfile)
 
-## Pull image from Docker Hub
+## Getting the docker image
+Download from Docker Hub:
 ```
 docker pull raymondwcs/node
 ```
-## Notes
+Or manual build:
+```
+docker build . -t raymondwcs/node
+```
+## Testing
 Create following *aliaes* for `node`, `npm` and `nodemon` in `.zshrc`
 ```
 NODE_DOCKER_IMAGE="raymondwcs/node"
