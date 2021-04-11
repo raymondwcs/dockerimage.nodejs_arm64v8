@@ -19,7 +19,8 @@ if [ $ARCH == "arm64" ]
 then
     # DOCKER_TAG="arm64v8-latest"
     echo ">>> Annotate..."
-    docker manifest annotate ${DOCKER_REPO} "${DOCKER_REPO}:${DOCKER_TAG}" --os linux --arch ${ARCH}
+    #docker manifest annotate ${DOCKER_REPO} "${DOCKER_REPO}:${DOCKER_TAG}" --os linux --arch ${ARCH}
+    docker manifest annotate ${DOCKER_REPO} "${DOCKER_REPO}:${DOCKER_TAG}" --os linux --arch "arm64/v8"
     echo ">>> Done!"
 fi
 
