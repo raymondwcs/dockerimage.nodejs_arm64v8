@@ -12,8 +12,9 @@ export ARCH=`echo "${DOCKERFILE_PATH}" | cut -d'.' -f2`
 echo "ARCH=${ARCH}"
 if [ $ARCH == "arm64" ]
 then
+    # DOCKER_TAG="arm64v8-latest"
     echo ">>> Create manifest and annotate..."
-    docker manifest create ${DOCKER_REPO} "${DOCKER_REPO}:latest" "${DOCKER_REPO}:arm64v8-latest"
-    docker manifest annotate ${DOCKER_REPO} "${DOCKER_REPO}:arm64v8-latest" --os linux --arch ${ARCH}
+    docker manifest create ${DOCKER_REPO} "${DOCKER_REPO}:latest" "${DOCKER_REPO}:${DOCKER_TAG}"
+    docker manifest annotate ${DOCKER_REPO} "${DOCKER_REPO}:${DOCKER_TAG}" --os linux --arch ${ARCH}
     echo ">>> Done!"
 fi
