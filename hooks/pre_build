@@ -1,2 +1,8 @@
 #!/bin/bash
-docker run --rm --privileged multiarch/qemu-user-static:register --reset
+export ARCH=`echo "${DOCKERFILE_PATH}" | cut -d'.' -f2`
+echo "ARCH=${ARCH}"
+if [ $ARCH == "arm64" ]
+then
+    echo "docker run --reset ..."
+    docker run --rm --privileged multiarch/qemu-user-static:register --reset
+fi
