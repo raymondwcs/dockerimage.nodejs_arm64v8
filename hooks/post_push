@@ -8,5 +8,12 @@ echo "IMAGE_NAME=${IMAGE_NAME}"
 #
 # docker manifest create raymondwcs/node raymondwcs/node:latest
 # docker manifest annotate raymondwcs/node raymondwcs/node:latest --os linux --arch arm64
-docker manifest create ${DOCKER_REPO} "${DOCKER_REPO}:${DOCKER_TAG}"
-docker manifest annotate ${DOCKER_REPO} "${DOCKER_REPO}:${DOCKER_TAG}" --os linux --arch arm64
+export ARCH=`echo "$FILE" | cut -d'.' -f2`
+echo "ARCH=${ARCH}"
+if [ -n ${ARCH} ]
+then
+    echo ">>> Create manifest and annotate..."
+    docker manifest create ${DOCKER_REPO} "${DOCKER_REPO}:latest" "${DOCKER_REPO}:arm64v8-latest"
+    docker manifest annotate ${DOCKER_REPO} "${DOCKER_REPO}:arm64v8-latest" --os linux --arch ${ARCH}
+    echo ">>> Done!"
+fi
