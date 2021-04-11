@@ -1,0 +1,3 @@
+#!/bin/bash
+docker manifest create raymondwcs/node raymondwcs/node:latest
+docker manifest annotate raymondwcs/node raymondwcs/node:latest --os linux --arch aarch64
