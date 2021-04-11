@@ -1,4 +1,8 @@
 #!/bin/bash
 export DOCKER_CLI_EXPERIMENTAL=enabled
+echo "DOCKERFILE_PATH=${DOCKERFILE_PATH}"
+echo "DOCKER_REPO=${DOCKER_REPO}"
+echo "DOCKER_TAG=${DOCKER_TAG}"
+echo "IMAGE_NAME=${IMAGE_NAME}"
 docker manifest create raymondwcs/node raymondwcs/node:latest
-docker manifest annotate raymondwcs/node raymondwcs/node:latest --os linux --arch arm64v8
+docker manifest annotate raymondwcs/node raymondwcs/node:latest --os linux --arch arm64
