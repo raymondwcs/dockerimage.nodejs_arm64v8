@@ -1,4 +1,4 @@
 #!/bin/bash
 export DOCKER_CLI_EXPERIMENTAL=enabled
 docker manifest create raymondwcs/node raymondwcs/node:latest
-docker manifest annotate raymondwcs/node raymondwcs/node:latest --os linux --arch aarch64
+docker manifest annotate raymondwcs/node raymondwcs/node:latest --os linux --arch arm64v8
