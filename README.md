@@ -20,4 +20,5 @@ This [script](hooks/pre_build) prepares the environemnt for building `arm64` ima
 This [script](hooks/post_push) creates a multi-arch manifest
 
 ## Reference
-https://github.com/cgiraldo/docker-hello-multiarch
+- https://www.docker.com/blog/multi-arch-build-and-images-the-simple-way/
+- https://github.com/cgiraldo/docker-hello-multiarch
