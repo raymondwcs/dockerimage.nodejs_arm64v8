@@ -4,7 +4,7 @@ This repo demonstrates how to build docker images for `amd64` and `arm64v8` usin
 1. [Docker Hub's automated build](https://docs.docker.com/docker-hub/builds/)
 1. [`qemu-user-static`](https://github.com/multiarch/qemu-user-static)
 
-This [Docker Hub repository](https://hub.docker.com/repository/docker/raymondwcs/node) is linked to this [GitHub project](https://github.com/raymondwcs/dockerimage.nodejs_arm64v8.git).  GitHub updates (`commit`) trigger automated build of the Docker images below:
+Updates made to this [repo](https://github.com/raymondwcs/dockerimage.nodejs_arm64v8.git) triggers auto build of the following Docker images, which reside in this [Docker Hub repository](https://hub.docker.com/repository/docker/raymondwcs/node).
 
 1. [`amd64`](Dockfile)
 1. [`arm64v8`](Dockerfile.arm64)
