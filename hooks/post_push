@@ -10,7 +10,8 @@ echo "IMAGE_NAME=${IMAGE_NAME}"
 # docker manifest annotate raymondwcs/node raymondwcs/node:latest --os linux --arch arm64
 #
 echo ">>> Creating multiarch manifest..."
-docker manifest create ${DOCKER_REPO} "${DOCKER_REPO}:latest" "${DOCKER_REPO}:${DOCKER_TAG}"
+#docker manifest create ${DOCKER_REPO} "${DOCKER_REPO}:latest" "${DOCKER_REPO}:${DOCKER_TAG}"
+docker manifest create ${DOCKER_REPO} "${DOCKER_REPO}:amd64-latest" "${DOCKER_REPO}:${DOCKER_TAG}"
 echo ">>> Done!"
 
 export ARCH=`echo "${DOCKERFILE_PATH}" | cut -d'.' -f2`
@@ -20,6 +21,7 @@ then
     # DOCKER_TAG="arm64v8-latest" 
     echo ">>> Annotate..."
     # linux/arm64/v8
+    #docker manifest annotate ${DOCKER_REPO} "${DOCKER_REPO}:${DOCKER_TAG}" --os linux --arch ${ARCH} --variant v8
     docker manifest annotate ${DOCKER_REPO} "${DOCKER_REPO}:${DOCKER_TAG}" --os linux --arch ${ARCH} --variant v8
     echo ">>> Done!"
 fi
